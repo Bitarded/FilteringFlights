@@ -35,7 +35,12 @@ public enum Rule {
         @Override
         List<Flight> filterFlightsWithRules(List<Flight> flights) {
             List<Flight> flightsResult = new ArrayList<>(flights);
-            for (Flight flight : flights) {
+
+            List<Flight> collect = flightsResult.stream()
+                    .filter(flight -> flight.getSegments().size() > 1)
+                    .collect(Collectors.toList());
+
+            for (Flight flight : collect) {
                 List<Segment> segments = flight.getSegments();
                 LocalDateTime tempDate = null;
                 long groundTime=0;

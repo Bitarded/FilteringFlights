@@ -10,11 +10,6 @@ public class FlightFilter {
         for(Rule rule : rules) {
             result = rule.filterFlightsWithRules(result);
         }
-
-//        for (int i = 0; i < rules.length; i++) {
-//            Rule rule = rules[i];
-//            result = rule.filterFlightsWithRules(result);
-//        }
         return result;
     }
 }
