@@ -5,9 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="32bf3aee-038d-41c4-b7fe-3f7e5dbda7da" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/gridnine/testing/FlightFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gridnine/testing/FlightFilter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/gridnine/testing/FlightBuilder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gridnine/testing/FlightBuilder.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/gridnine/testing/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gridnine/testing/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/gridnine/testing/Rule.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gridnine/testing/Rule.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/gridnine/testing/FlightFilterTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/gridnine/testing/FlightFilterTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -24,6 +28,19 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">
+    <option name="selectedUrlAndAccountId">
+      <UrlAndAccount>
+        <option name="accountId" value="f2bfaa97-fc58-49f6-a4c1-29795527dc60" />
+        <option name="url" value="git@github.com:/Bitarded/FilteringFlights.git" />
+      </UrlAndAccount>
+    </option>
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -75,7 +92,7 @@
       <recent name="com.gridnine.testing" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.FlightFilterTest">
+  <component name="RunManager" selected="Application.Main">
     <configuration name="Main" type="Application" factoryName="Application" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.gridnine.testing.Main" />
       <module name="FilteringFlights" />
@@ -136,11 +153,54 @@
       <updated>1674334866833</updated>
       <workItem from="1674334868232" duration="685000" />
       <workItem from="1674335559548" duration="602000" />
-      <workItem from="1674336170099" duration="20127000" />
+      <workItem from="1674336170099" duration="21295000" />
+      <workItem from="1674399759677" duration="15220000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/test/java/com/gridnine/testing/FlightFilterTest.java</url>
+          <line>47</line>
+          <properties class="com.gridnine.testing.FlightFilterTest" method="removesFlightsThatDepartBeforeCurrentDate">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="13" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/test/java/com/gridnine/testing/FlightFilterTest.java</url>
+          <line>56</line>
+          <properties class="com.gridnine.testing.FlightFilterTest" method="removesFlightsThatArrivesBeforeDeparting">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="14" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/test/java/com/gridnine/testing/FlightFilterTest.java</url>
+          <line>65</line>
+          <properties class="com.gridnine.testing.FlightFilterTest" method="removesFlightsWithGroundTimeMoreThanTwoHours">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="15" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/test/java/com/gridnine/testing/FlightFilterTest.java</url>
+          <line>73</line>
+          <properties class="com.gridnine.testing.FlightFilterTest" method="removesFlightsWithEveryRule">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="16" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

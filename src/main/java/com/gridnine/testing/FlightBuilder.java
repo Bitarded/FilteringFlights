@@ -9,40 +9,28 @@ import java.util.List;
  * Factory class to get sample list of flights.
  */
 public class FlightBuilder {
-    public static List<Flight> createFlights() {
+    static List<Flight> createFlights() {
         LocalDateTime threeDaysFromNow = LocalDateTime.now().plusDays(3);
         return Arrays.asList(
-                //#1 A normal flight with two hour duration
+                //A normal flight with two hour duration
                 createFlight(threeDaysFromNow, threeDaysFromNow.plusHours(2)),
-                //#2 A normal multi segment flight
+                //A normal multi segment flight
                 createFlight(threeDaysFromNow, threeDaysFromNow.plusHours(2),
                         threeDaysFromNow.plusHours(3), threeDaysFromNow.plusHours(5)),
-                //#3 A flight departing in the past
+                //A flight departing in the past
                 createFlight(threeDaysFromNow.minusDays(6), threeDaysFromNow),
-                //#4 A flight that departs before it arrives
+                //A flight that departs before it arrives 
                 createFlight(threeDaysFromNow, threeDaysFromNow.minusHours(6)),
-                //#5 A flight with more than two hours ground time
+                //A flight with more than two hours ground time
                 createFlight(threeDaysFromNow, threeDaysFromNow.plusHours(2),
                         threeDaysFromNow.plusHours(5), threeDaysFromNow.plusHours(6)),
-                //#6 Another flight with more than two hours ground time
+                //Another flight with more than two hours ground time
                 createFlight(threeDaysFromNow, threeDaysFromNow.plusHours(2),
                         threeDaysFromNow.plusHours(3), threeDaysFromNow.plusHours(4),
-                        threeDaysFromNow.plusHours(6), threeDaysFromNow.plusHours(7)),
-                //#7 Flight with more than two hours of ground time in small portions
-                createFlight(threeDaysFromNow, threeDaysFromNow.plusHours(2),
-                        threeDaysFromNow.plusHours(3), threeDaysFromNow.plusHours(4),
-                        threeDaysFromNow.plusHours(5), threeDaysFromNow.plusHours(6)),
-                //#8 Long Flight with more than two hours of ground time
-                createFlight(threeDaysFromNow, threeDaysFromNow.plusHours(5),
-                        threeDaysFromNow.plusHours(7), threeDaysFromNow.plusHours(10)),
-                //#9 Long Flight
-                createFlight(threeDaysFromNow, threeDaysFromNow.plusHours(5),
-                        threeDaysFromNow.plusHours(6), threeDaysFromNow.plusHours(10),
-                        threeDaysFromNow.plusHours(10), threeDaysFromNow.plusHours(20))
-                        );
+                        threeDaysFromNow.plusHours(6), threeDaysFromNow.plusHours(7)));
     }
 
-    private static Flight createFlight(final LocalDateTime... dates) {
+     static Flight createFlight(final LocalDateTime... dates) {
         if ((dates.length % 2) != 0) {
             throw new IllegalArgumentException(
                     "you must pass an even number of dates");

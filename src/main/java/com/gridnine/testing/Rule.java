@@ -2,7 +2,6 @@ package com.gridnine.testing;
 
 import java.time.LocalDateTime;
 import java.time.temporal.ChronoUnit;
-import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -33,25 +32,26 @@ public enum Rule {
     },
     GROUND_TIME_MORE_THAN_TWO_HOURS {
         @Override
-        List<Flight> filterFlightsWithRules(List<Flight> flights) {
-            List<Flight> flightsResult = new ArrayList<>(flights);
+        List<Flight> filterFlightsWithRules(List<Flight> flightsResult) {
+//            List<Flight> flightsResult = new ArrayList<>(flights);
 
-            List<Flight> collect = flightsResult.stream()
+            List<Flight> flightsWithMoreThanOneSegments = flightsResult.stream()
                     .filter(flight -> flight.getSegments().size() > 1)
                     .collect(Collectors.toList());
 
-            for (Flight flight : collect) {
-                List<Segment> segments = flight.getSegments();
+            for (Flight flight : flightsWithMoreThanOneSegments) {
+                long groundTime = 0;
                 LocalDateTime tempDate = null;
-                long groundTime=0;
+                List<Segment> segments = flight.getSegments();
+
                 for (Segment segment : segments) {
                     if (tempDate == null) {
                         tempDate = segment.getArrivalDate();
                     } else {
                         LocalDateTime departureDate = segment.getDepartureDate();
-                        long hours = ChronoUnit.HOURS.between( tempDate,departureDate);
-                        groundTime+=hours;
-                        if (groundTime>=2) {
+                        long hours = ChronoUnit.HOURS.between(tempDate, departureDate);
+                        groundTime += hours;
+                        if (groundTime > 2) {
                             flightsResult.remove(flight);
                             break;
                         } else {
